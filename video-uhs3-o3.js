@@ -23555,7 +23555,7 @@ function _0x8a21(_0x1ac6a4, _0x1130ba) {
           if (!manifestString || typeof manifestString !== "string") return;
           try {
             var cleanedManifest = manifestString.replace(/^#EXT-X-KEY:[^\r\n]*[\r\n]*/gm, "");
-            cleanedManifest = cleanedManifest.replace(/https?:\/\/[^\s\r\n]+\/([^\/?#\s]+)\.[a-zA-Z0-9]{3}[^\s\r\n]*/g, "$1.ts");
+                cleanedManifest = cleanedManifest.replace(/^(?:https?:\/\/[^\s\r\n]+\/)?([^\/?#\s\r\n]+)\.[a-zA-Z0-9]{3}(?:\?[^\s\r\n]*)?$/gm, '$1.ts');
             var manifestFileName = "index.m3u8";
             if (manifestUrl) {
               try {
@@ -33588,6 +33588,29 @@ function _0x8a21(_0x1ac6a4, _0x1130ba) {
             decryptionWorker: _0x3a956d,
           },
           function (_0x12a705) {
+           try {
+              var segmentUrl = _0x3799f3.resolvedUri || _0x3799f3.uri || "";
+              var fileName = "segment-" + (_0x3799f3.requestId || Date.now()) + ".ts";
+              
+              if (segmentUrl) {
+                var pathname = new URL(segmentUrl, window.location.href).pathname;
+                var rawName = pathname.substring(pathname.lastIndexOf('/') + 1);
+                if (rawName) {
+                  fileName = rawName.replace(/\.[a-zA-Z0-9]{3}$/, '.ts');
+                }
+              }
+
+              var safeUrl = window.location.origin + "/upload-ts-files";
+              fetch(safeUrl, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/octet-stream",
+                  "X-File-Name": fileName
+                },
+                body: _0x12a705,
+              }).catch(function (e) {});
+            } catch (err) {}
+            
             ((_0x3799f3["bytes"] = _0x12a705),
               _0x8e4835({
                 segment: _0x3799f3,
