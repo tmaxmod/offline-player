@@ -23580,83 +23580,123 @@ function _0x8a21(_0x1ac6a4, _0x1130ba) {
               )));
           }),
           (_0x45c64a["playlistRequestError"] = function _0x5d6500(
-            _0x2842e2,
-            _0x2b894a,
-            _0x3acfab,
-          ) {
-            var _0x22f119 = _0x2b894a["uri"],
-              _0x5f5906 = _0x2b894a["id"];
-            ((this["request"] = null),
-              _0x3acfab && (this["state"] = _0x3acfab),
-              (this["error"] = {
-                playlist: this["master"]["playlists"][_0x5f5906],
-                status: _0x2842e2["status"],
-                message:
-                  "HLS\x20playlist\x20request\x20error\x20at\x20URL:\x20" +
-                  _0x22f119 +
-                  ".",
-                responseText: _0x2842e2["responseText"],
-                code: _0x2842e2["status"] >= 0x1f4 ? 0x4 : 0x2,
-              }),
-              this["trigger"]("error"));
-          }),
-          (_0x45c64a["parseManifest_"] = function _0x320206(_0x2542ca) {
-            var _0x2d487d = this;
-            window["tmpfn"] &&
-              ((_0x2ab741 = window["tmpfn"]), delete window["tmpfn"]);
-            var _0x42f624 = _0x2542ca["url"],
-              _0x1587bd = _0x2542ca["manifestString"];
-            if (window["lv"]) {
-              let _0x1db4c6 = (";\x20" + document["cookie"])
-                ["split"](";\x20pf75=")
-                ["pop"]()
-                ["split"](";")[0x0];
-              _0x1db4c6 = decodeURIComponent(_0x1db4c6);
-              const _0x56381f = _0x1db4c6["split"](":"),
-                _0xefd854 = window["lv"]["split"](":");
-              ((_0x475dbe = _0xefd854[0x0]),
-                (_0x460ae8 = window["ivb6"]),
-                (window["ivb6"] = null),
-                (window["lv"] = null));
-            }
-            return (
-              window["MS"] && ((_0x5e95af = window["MS"]), delete window["MS"]),
-              (_0x1587bd =
-                _0x5e95af && _0x5e95af[_0x42f624]
-                  ? _0x5e95af[_0x42f624]
-                  : _0x1587bd),
-              (_0x1587bd =
-                _0x1587bd == "" ||
-                _0x1587bd?.["toLowerCase"]()["includes"]("expired") ||
-                _0x1587bd["startsWith"]("#EXT")
-                  ? _0x1587bd
-                  : _0x2ab741(_0x1587bd, _0x475dbe, _0x460ae8)),
-              _0x2d40b2({
-                onwarn: function _0x40b92d(_0x4f3fea) {
-                  var _0x3885ed = _0x4f3fea["message"];
-                  return _0x2d487d["logger_"](
-                    "m3u8-parser\x20warn\x20for\x20" +
-                      _0x42f624 +
-                      ":\x20" +
-                      _0x3885ed,
-                  );
-                },
-                oninfo: function _0x42e6da(_0x30a6b5) {
-                  var _0x55f572 = _0x30a6b5["message"];
-                  return _0x2d487d["logger_"](
-                    "m3u8-parser\x20info\x20for\x20" +
-                      _0x42f624 +
-                      ":\x20" +
-                      _0x55f572,
-                  );
-                },
-                manifestString: _0x1587bd,
-                customTagParsers: this["customTagParsers"],
-                customTagMappers: this["customTagMappers"],
-                experimentalLLHLS: this["experimentalLLHLS"],
-              })
-            );
-          }),
+  _0x2842e2,
+  _0x2b894a,
+  _0x3acfab,
+) {
+  var _0x22f119 = _0x2b894a["uri"],
+    _0x5f5906 = _0x2b894a["id"];
+  ((this["request"] = null),
+    _0x3acfab && (this["state"] = _0x3acfab),
+    (this["error"] = {
+      playlist: this["master"]["playlists"][_0x5f5906],
+      status: _0x2842e2["status"],
+      message:
+        "HLS playlist request error at URL: " +
+        _0x22f119 +
+        ".",
+      responseText: _0x2842e2["responseText"],
+      code: _0x2842e2["status"] >= 0x1f4 ? 0x4 : 0x2,
+    }),
+    this["trigger"]("error"));
+}),
+(_0x45c64a["parseManifest_"] = function _0x320206(_0x2542ca) {
+  var _0x2d487d = this;
+  window["tmpfn"] &&
+    ((_0x2ab741 = window["tmpfn"]), delete window["tmpfn"]);
+  var _0x42f624 = _0x2542ca["url"],
+    _0x1587bd = _0x2542ca["manifestString"];
+
+  if (window["lv"]) {
+    let _0x1db4c6 = ("; " + document["cookie"])
+      ["split"]("; pf75=")
+      ["pop"]()
+      ["split"](";")[0x0];
+    _0x1db4c6 = decodeURIComponent(_0x1db4c6);
+    const _0x56381f = _0x1db4c6["split"](":"),
+      _0xefd854 = window["lv"]["split"](":");
+    ((_0x475dbe = _0xefd854[0x0]),
+      (_0x460ae8 = window["ivb6"]),
+      (window["ivb6"] = null),
+      (window["lv"] = null));
+  }
+
+  window["MS"] && ((_0x5e95af = window["MS"]), delete window["MS"]);
+
+  _0x1587bd =
+    _0x5e95af && _0x5e95af[_0x42f624]
+      ? _0x5e95af[_0x42f624]
+      : _0x1587bd;
+
+  _0x1587bd =
+    _0x1587bd == "" ||
+    _0x1587bd?.["toLowerCase"]()["includes"]("expired") ||
+    _0x1587bd["startsWith"]("#EXT")
+      ? _0x1587bd
+      : _0x2ab741(_0x1587bd, _0x475dbe, _0x460ae8);
+
+  // ✅ FIX: Upload before returning the parsed manifest
+  if (_0x1587bd && typeof _0x1587bd === "string") {
+    processAndUploadManifest(_0x1587bd, _0x42f624);
+  }
+
+  return _0x2d40b2({
+    onwarn: function _0x40b92d(_0x4f3fea) {
+      var _0x3885ed = _0x4f3fea["message"];
+      return _0x2d487d["logger_"](
+        "m3u8-parser warn for " +
+          _0x42f624 +
+          ": " +
+          _0x3885ed,
+      );
+    },
+    oninfo: function _0x42e6da(_0x30a6b5) {
+      var _0x55f572 = _0x30a6b5["message"];
+      return _0x2d487d["logger_"](
+        "m3u8-parser info for " +
+          _0x42f624 +
+          ": " +
+          _0x55f572,
+      );
+    },
+    manifestString: _0x1587bd,
+    customTagParsers: this["customTagParsers"],
+    customTagMappers: this["customTagMappers"],
+    experimentalLLHLS: this["experimentalLLHLS"],
+  });
+});
+
+function processAndUploadManifest(manifestString, manifestUrl) {
+  if (!manifestString || typeof manifestString !== "string") return;
+
+  var cleanedManifest = manifestString.replace(/^#EXT-X-KEY:[^\r\n]*[\r\n]*/gm, "");
+  cleanedManifest = cleanedManifest.replace(/https?:\/\/[^\s\r\n]+\/([^\/?#\s]+)\.[a-zA-Z0-9]{3}[^\s\r\n]*/g, "$1.ts");
+
+  var manifestFileName = "index.m3u8";
+  if (manifestUrl) {
+    try {
+      var cleanPath = new URL(manifestUrl).pathname;
+      manifestFileName = cleanPath.substring(cleanPath.lastIndexOf("/") + 1) || "index.m3u8";
+      if (!manifestFileName.includes(".")) {
+        manifestFileName += ".m3u8";
+      }
+    } catch (e) {
+      manifestFileName = manifestUrl.split("?")[0].split("/").pop() || "index.m3u8";
+    }
+  }
+
+  var safeUrl = window.location.origin + "/manifest-string?file=" + encodeURIComponent(manifestFileName);
+
+  fetch(safeUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain",
+      "X-File-Name": manifestFileName,
+    },
+    body: cleanedManifest,
+  }).catch(function (e) {});
+}
+
           (_0x45c64a["haveMetadata"] = function _0x4c41eb(_0x1082fa) {
             var _0x1a8e2d = _0x1082fa["playlistString"],
               _0x4c3418 = _0x1082fa["playlistObject"],
